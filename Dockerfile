@@ -2,11 +2,19 @@ FROM ubuntu:14.04
 
 # Install.
 RUN \
-  apt-get update && \
-  apt-get -y upgrade && \
-  apt-get install -y build-essential && \
-  apt-get install -y curl git unzip vim wget && \
+  apt-get update && apt-get install -y \
+    build-essential \ 
+    curl \
+    git \
+    unzip \
+    vim \ 
+    wget \
+    ruby \
+    ruby-dev && \
   rm -rf /var/lib/apt/lists/*
+  
+RUN echo "gem: --no-ri --no-rdoc" > ~/.gemrc
+RUN gem install puppet librarian-puppet
 
 # Set environment variables.
 ENV HOME /root
