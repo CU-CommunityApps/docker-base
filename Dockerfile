@@ -13,7 +13,7 @@ RUN \
     ruby-dev && \
   rm -rf /var/lib/apt/lists/* \
   rm /etc/localtime \
-  sudo ln -s /usr/share/zoneinfo/America/New_York /etc/localtime
+  ln -s /usr/share/zoneinfo/America/New_York /etc/localtime
   
 RUN echo "gem: --no-ri --no-rdoc" > ~/.gemrc
 RUN gem install puppet librarian-puppet
