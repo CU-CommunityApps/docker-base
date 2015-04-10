@@ -10,11 +10,14 @@ RUN \
     vim \ 
     wget \
     ruby \
-    ruby-dev && \
+    ruby-dev \
+    clamav-daemon && \
   rm -rf /var/lib/apt/lists/* 
   
-  RUN rm /etc/localtime 
-  RUN ln -s /usr/share/zoneinfo/America/New_York /etc/localtime
+RUN rm /etc/localtime 
+RUN ln -s /usr/share/zoneinfo/America/New_York /etc/localtime
+
+RUN freshclam -v
   
 RUN echo "gem: --no-ri --no-rdoc" > ~/.gemrc
 RUN gem install puppet librarian-puppet
