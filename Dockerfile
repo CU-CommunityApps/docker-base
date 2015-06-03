@@ -1,5 +1,8 @@
 FROM ubuntu:14.04
 
+# File Author / Maintainer
+MAINTAINER Shawn Bower <shawn.bower@gmail.com>
+
 # Install.
 RUN \
   apt-get update && apt-get install -y \
