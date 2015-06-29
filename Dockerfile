@@ -28,7 +28,8 @@ RUN mkdir /var/run/clamav && \
 COPY conf/clamd.conf /etc/clamav/clamd.conf
       
 RUN echo "gem: --no-ri --no-rdoc" > ~/.gemrc
-RUN gem install puppet librarian-puppet
+RUN gem install puppet -v 3.7.5 && \
+    gem install librarian-puppet -v 2.1.0
 
 # Set environment variables.
 ENV HOME /root
