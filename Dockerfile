@@ -14,7 +14,8 @@ RUN \
     wget \
     ruby \
     ruby-dev \
-    clamav-daemon && \
+    clamav-daemon \
+    openssh-client && \
   rm -rf /var/lib/apt/lists/*
 
 RUN rm /etc/localtime
