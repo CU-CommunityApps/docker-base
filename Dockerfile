@@ -30,7 +30,7 @@ RUN freshclam -v && \
 COPY conf/clamd.conf /etc/clamav/clamd.conf
 
 RUN echo "gem: --no-ri --no-rdoc" > ~/.gemrc && \
-  gem install json_pure -v 1.8.1 && \
+  gem install json_pure -v 1.8.1 && \ 
   gem install puppet -v 3.7.5 && \
   gem install librarian-puppet -v 2.1.0 && \
   gem install hiera-eyaml -v 2.1.0
